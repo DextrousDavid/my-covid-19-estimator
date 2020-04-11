@@ -14,7 +14,7 @@ const covid19ImpactEstimator = () => {
   };
   const dataCalc = () => {
     if (data.periodType === 'days') {
-      return (Math.trunc((data.timeToElapse / 30)));
+      return (Math.trunc((data.timeToElapse / 3)));
     }
     if (data.periodType === 'weeks') {
       return (Math.trunc((data.timeToElapse / 3) * 7));
@@ -43,7 +43,7 @@ const covid19ImpactEstimator = () => {
     severeImpact: severeImpactEstimator
   };
 };
-console.log(covid19ImpactEstimator());
+// console.log(covid19ImpactEstimator());
 
 //  module.exports = covid19ImpactEstimator;
 export default covid19ImpactEstimator;
