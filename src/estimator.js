@@ -1,68 +1,50 @@
-const express = require('express');
-const path = require('path');
-
-//Initialize Express
-const app = express();
-app.get('/', (req, res) => res.send('Hello Andela!'));
-
-//
-
-const covid19ImpactEstimator = (data) => data;
-const data = {
+const covid19ImpactEstimator = () => {
+  const data = {
     region: {
-        name: 'Africa',
-        avgAge: 19.7,
-        avgDailyIncomeInUSD: 5,
-        avgDailyIncomePopulation: 0.71
+      name: 'Africa',
+      avgAge: 19.7,
+      avgDailyIncomeInUSD: 5,
+      avgDailyIncomePopulation: 0.71
     },
-    periodType: "days",
+    periodType: 'days',
     timeToElapse: 58,
     reportedCases: 674,
     population: 66622705,
     totalHospitalBeds: 1380614
-},
+  };
+  const dataCalc = () => {
+    if (data.periodType === 'days') {
+      return (Math.trunc((data.timeToElapse * 1) / 3));
+    }
+    /*  if (data.periodType === 'weeks') {
+      return (Math.trunc((data.timeToElapse * 7) / 3));
+    }
+    if (data.periodType === 'months') {
+      return (Math.trunc((data.timeToElapse * 7) / 3));
+    }
+    */
+    return 0;
+  };
+  //  Impact
+  const impact = {
+    currentlyInfected: data.reportedCases * 10,
+    infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc(data)))
+  };
+  //  SevereImpact
+  const severeImpact = {
+    currentlyInfected: data.reportedCases * 50,
+    infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc(data)))
+  };
+  const input = data;
+  const impactEstimator = impact;
+  const severeImpactEstimator = severeImpact;
+  return {
+    data: input,
+    impact: impactEstimator,
+    severeImpact: severeImpactEstimator
+  };
+};
+console.log(covid19ImpactEstimator());
 
-//Impact Estimator
-impact = function() {
-        let reportedCases = 674;
-        let currentlyInfected = reportedCases * 10;
-        let infectionsByRequestedTime = currentlyInfected * Math.pow(2, 9);
-        let severeCasesByRequestedTime = infectionsByRequestedTime * 0.15;
-        let hospitalBedsByRequestedTime = severeCasesByRequestedTime * 0.35;
-        let casesForICUByRequestedTime = infectionsByRequestedTime * 0.05;
-        let casesForVentilatorsByRequestedTime = infectionsByRequestedTime * 0.02;
-        let dollarsInFlight = (infectionsByRequestedTime * 0.65 * 1.5) / 30;
-        return  `IMPACT ESTIMATOR\ncurrentlyInfected: ${currentlyInfected} \ninfectionByRequestedTime: ${infectionsByRequestedTime} \nsevereCasesByRequestedTime: ${severeCasesByRequestedTime}\nhospitalBedsRequestedTime: ${Math.round(hospitalBedsByRequestedTime)} \ncasesForICUByRequestedtime: ${casesForICUByRequestedTime} \ncasesForVentilatorsByRequestedTime: ${Math.round(casesForVentilatorsByRequestedTime)} \ndollarsInFlight: $${Math.round(dollarsInFlight)}`
-}
-
-//severeImpact Estimator
-severeImpact = function() {
-    let reportedCases = 674;
-    let currentlyInfected = reportedCases * 50;
-    let infectionsByRequestedTime = currentlyInfected * Math.pow(2, 9);
-    let severeCasesByRequestedTime = infectionsByRequestedTime * 0.15;
-    let hospitalBedsByRequestedTime = severeCasesByRequestedTime * 0.35;
-    let casesForICUByRequestedTime = infectionsByRequestedTime * 0.05;
-    let casesForVentilatorsByRequestedTime = infectionsByRequestedTime * 0.02;
-    let dollarsInFlight = (infectionsByRequestedTime * 0.65 * 1.5) /30;
-    return  `\nSEVERE IMPACT ESTIMATOR\ncurrentlyInfected: ${currentlyInfected} \ninfectionByRequestedTime: ${infectionsByRequestedTime} \nsevereCasesByRequestedTime: ${severeCasesByRequestedTime}\nhospitalBedsRequestedTime: ${hospitalBedsByRequestedTime} \ncasesForICUByRequestedtime: ${casesForICUByRequestedTime} \ncasesForVentilatorsByRequestedTime: ${casesForVentilatorsByRequestedTime} \ndollarsInFlight: $${dollarsInFlight}`
- 
-}
-console.log(covid19ImpactEstimator(data));
-
-console.log(covid19ImpactEstimator(impact()));
-console.log(covid19ImpactEstimator(severeImpact()));
-
-//Can also be run with...
-//console.log(impact());
-//console.log(severeImpact());
-//console.log(covid19ImpactEstimator(impact.currentlyInfected()));
-
-
-
- //export default covid19ImpactEstimator;
- //let k; export default k = 12;
-
-//Listen to port 8000;
- const port = 8000;
- //app.listen(port, () => console.log(`Listnening to port ${port}....`))
+module.exports = covid19ImpactEstimator;
+//  export default covid19ImpactEstimator;
