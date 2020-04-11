@@ -14,26 +14,25 @@ const covid19ImpactEstimator = () => {
   };
   const dataCalc = () => {
     if (data.periodType === 'days') {
-      return (Math.trunc((data.timeToElapse * 1) / 3));
+      return (Math.trunc((data.timeToElapse * 1) / 30));
     }
-    /*  if (data.periodType === 'weeks') {
+    if (data.periodType === 'weeks') {
       return (Math.trunc((data.timeToElapse * 7) / 3));
     }
     if (data.periodType === 'months') {
-      return (Math.trunc((data.timeToElapse * 7) / 3));
+      return (Math.trunc((data.timeToElapse * 30) / 3));
     }
-    */
     return 0;
   };
   //  Impact
   const impact = {
     currentlyInfected: data.reportedCases * 10,
-    infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc(data)))
+    infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc()))
   };
   //  SevereImpact
   const severeImpact = {
     currentlyInfected: data.reportedCases * 50,
-    infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc(data)))
+    infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
   };
   const input = data;
   const impactEstimator = impact;
@@ -47,4 +46,4 @@ const covid19ImpactEstimator = () => {
 console.log(covid19ImpactEstimator());
 
 // module.exports = covid19ImpactEstimator;
-export default covid19ImpactEstimator;
+//  export default covid19ImpactEstimator;
