@@ -1,5 +1,4 @@
 const covid19ImpactEstimator = (data) => {
-  const input = data;
   const dataCalc = () => {
     if (data.periodType === 'days') {
       return (Math.trunc((data.timeToElapse / 3)));
@@ -12,15 +11,16 @@ const covid19ImpactEstimator = (data) => {
     }
     return 0;
   };
+
   return {
-    data: input,
     impact: {
-      currentlyInfected: data.reportedCases * 10,
-      infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc()))
+      currentlyInfected: () => (data.reportedCases * 10),
+      infectionByRequestedTime: () => (data.reportedCases * 10) * (2 ** (dataCalc()))
     },
     severeImpact: {
-      currentlyInfected: data.reportedCases * 50,
-      infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
+      reportedCases: 674,
+      currentlyInfected: () => (data.reportedCases * 50),
+      infectionByRequestedTime: () => (data.reportedCases * 50) * (2 ** (dataCalc()))
     }
   };
 };
