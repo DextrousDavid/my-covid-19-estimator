@@ -1,46 +1,47 @@
 const covid19ImpactEstimator = (data) => {
-  const info = {
-    region: {
-      name: 'Africa',
-      avgAge: 19.7,
-      avgDailyIncomeInUSD: 5,
-      avgDailyIncomePopulation: 0.71
-    },
-    periodType: 'days',
-    timeToElapse: 58,
-    reportedCases: 674,
-    population: 66622705,
-    totalHospitalBeds: 1380614
-  };
+  // const data = {
+  //   region: {
+  //     name: 'Africa',
+  //     avgAge: 19.7,
+  //     avgDailyIncomeInUSD: 5,
+  //     avgDailyIncomePopulation: 0.71
+  //   },
+  //   periodType: 'days',
+  //   timeToElapse: 58,
+  //   reportedCases: 674,
+  //   population: 66622705,
+  //   totalHospitalBeds: 1380614
+  // };
   const dataCalc = () => {
-    if (info.periodType === 'days') {
-      return (Math.trunc((info.timeToElapse / 3)));
+    if (data.periodType === 'days') {
+      return (Math.trunc((data.timeToElapse / 3)));
     }
-    if (info.periodType === 'weeks') {
-      return (Math.trunc((info.timeToElapse / 3) * 7));
+    if (data.periodType === 'weeks') {
+      return (Math.trunc((data.timeToElapse / 3) * 7));
     }
-    if (info.periodType === 'months') {
-      return (Math.trunc((info.timeToElapse / 3) * 30));
+    if (data.periodType === 'months') {
+      return (Math.trunc((data.timeToElapse / 3) * 30));
     }
     return 0;
   };
   //  Impact
   const impact = {
-    currentlyInfected: info.reportedCases * 10,
-    infectionByRequestedTime: (info.reportedCases * 10) * (2 ** (dataCalc()))
+    currentlyInfected: data.reportedCases * 10,
+    // infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc()))
+    infectionByRequestedTime: (data.reportedCases * 10) * (Math.pow(2, dataCalc()))
   };
   //  SevereImpact
   const severeImpact = {
-    currentlyInfected: info.reportedCases * 50,
-    infectionByRequestedTime: (info.reportedCases * 50) * (2 ** (dataCalc()))
+    currentlyInfected: data.reportedCases * 50,
+    // infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
+    infectionByRequestedTime: (data.reportedCases * 50) * (Math.pow(2, dataCalc()))
   };
-  const impactEstimator = impact;
-  const severeImpactEstimator = severeImpact;
+  // const impactEstimator = impact;
+  // const severeImpactEstimator = severeImpact;
   return {
-    info,
     data,
-    impact: impactEstimator,
-    severeImpact: severeImpactEstimator
+    impact,
+    severeImpact
   };
 };
 
