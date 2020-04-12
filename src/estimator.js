@@ -13,11 +13,13 @@ const covid19ImpactEstimator = (data) => {
   };
   //  Impact
   const impact = {
+    reportedCases: 674,
     currentlyInfected: data.reportedCases * 10,
     infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc()))
   };
   //  SevereImpact
   const severeImpact = {
+    reportedCases: 674,
     currentlyInfected: data.reportedCases * 50,
     infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
   };
@@ -29,6 +31,6 @@ const covid19ImpactEstimator = (data) => {
   };
 };
 
-console.log(covid19ImpactEstimator());
+//  console.log(covid19ImpactEstimator());
 //  module.exports = covid19ImpactEstimator;
-// export default covid19ImpactEstimator();
+export default covid19ImpactEstimator();
