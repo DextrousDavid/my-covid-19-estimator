@@ -1,4 +1,16 @@
-const covid19ImpactEstimator = (data) => {
+const dataCalc = (periodType, timeToElapse) => {
+  if (periodType === 'days') {
+    return (Math.trunc((timeToElapse / 3)));
+  }
+  if (periodType === 'weeks') {
+    return (Math.trunc((timeToElapse / 3) * 7));
+  }
+  if (periodType === 'months') {
+    return (Math.trunc((timeToElapse / 3) * 30));
+  }
+  return 0;
+};
+const covid19ImpactEstimator = (data) => ({
   // const data = {
   //   region: {
   //     name: 'Africa',
@@ -12,37 +24,19 @@ const covid19ImpactEstimator = (data) => {
   //   population: 66622705,
   //   totalHospitalBeds: 1380614
   // };
-  const dataCalc = () => {
-    if (data.periodType === 'days') {
-      return (Math.trunc((data.timeToElapse / 3)));
-    }
-    if (data.periodType === 'weeks') {
-      return (Math.trunc((data.timeToElapse / 3) * 7));
-    }
-    if (data.periodType === 'months') {
-      return (Math.trunc((data.timeToElapse / 3) * 30));
-    }
-    return 0;
-  };
-  //  Impact
-  const impact = {
-    currentlyInfected: data.reportedCases * 10,
-    infectionByRequestedTime: (data.reportedCases * 10) * (2 ** (dataCalc()))
-  };
-  //  SevereImpact
-  const severeImpact = {
-    currentlyInfected: data.reportedCases * 50,
-    infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
-  };
-  const impactEstimator = impact;
-  const severeImpactEstimator = severeImpact;
-  return {
-    data,
-    impact: impactEstimator,
-    severeImpact: severeImpactEstimator
-  };
-};
+  
+  data,
+  impact: {
+  currentlyInfected: data.reportedCases * 10,
+  infectionsByRequestedTime: (data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse))
+  },
+  severeImpact: {
+  currentlyInfected: data.reportedCases * 50,
+  infectionsByRequestedTime: (data.reportedCases * 50) * (2 ** dataCalc(data.periodType, data.timeToElapse))
+  }
+    
+});
 
 
-// module.exports = covid19ImpactEstimator;
-export default covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;
+// export default covid19ImpactEstimator;
