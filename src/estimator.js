@@ -33,20 +33,20 @@ const covid19ImpactEstimator = (data) => ({
     infectionsByRequestedTime:
       (data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse)),
     severeCasesByRequestedTime:
-    (data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.15,
+    ((data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.15),
     hospitalBedsByRequestedTime:
     ((data.reportedCases * 10)
-    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * (0.35 * data.totalHospitalBeds))
+    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.35(data.totalHospitalBeds))
   },
   severeImpact: {
     currentlyInfected: data.reportedCases * 50,
     infectionsByRequestedTime:
       (data.reportedCases * 50) * (2 ** dataCalc(data.periodType, data.timeToElapse)),
     severeCasesByRequestedTime:
-    (data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.15,
+    ((data.reportedCases * 50) * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.15),
     hospitalBedsByRequestedTime:
-    ((data.reportedCases * 10)
-    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * (0.35 * data.totalHospitalBeds))
+    ((data.reportedCases * 50)
+    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.35 * (data.totalHospitalBeds))
   }
 });
 
