@@ -34,15 +34,15 @@ const covid19ImpactEstimator = (data) => {
     currentlyInfected: data.reportedCases * 50,
     infectionByRequestedTime: (data.reportedCases * 50) * (2 ** (dataCalc()))
   };
-  // const impactEstimator = impact;
-  // const severeImpactEstimator = severeImpact;
+  const impactEstimator = impact;
+  const severeImpactEstimator = severeImpact;
   return {
     data,
-    impact,
-    severeImpact
+    'impact': impactEstimator,
+    'severeImpact': severeImpactEstimator
   };
 };
 
 
-module.exports = covid19ImpactEstimator;
-// export default covid19ImpactEstimator;
+// module.exports = covid19ImpactEstimator;
+export default covid19ImpactEstimator;
