@@ -36,7 +36,7 @@ const covid19ImpactEstimator = (data) => ({
     ((data.reportedCases * 10) * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.15),
     hospitalBedsByRequestedTime:
     ((data.reportedCases * 10)
-    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.35(data.totalHospitalBeds))
+    * (2 ** dataCalc(data.periodType, data.timeToElapse)) * 0.35 * (data.totalHospitalBeds))
   },
   severeImpact: {
     currentlyInfected: data.reportedCases * 50,
