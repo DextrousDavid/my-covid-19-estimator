@@ -1,4 +1,4 @@
-// Convert period tupes 'weeks', 'months' to the default 'days'
+// Convert period types to 'weeks', 'months' to the default 'days'
 const dayConverter = (periodType, timeToElapse) => {
   switch (periodType) {
     case 'weeks':
@@ -10,7 +10,7 @@ const dayConverter = (periodType, timeToElapse) => {
   }
 };
 
-// Estimate the number of severe positive cases the will require hospitalization
+// Estimate the number of severe positive cases the will req hospitalization
 const getSevereCases = (infectionsByRequestedTime) => {
   const percent = 15 / 100;
   const severeCasesByRequestedTime = percent * infectionsByRequestedTime;
@@ -81,7 +81,7 @@ const covid19ImpactEstimator = (data) => {
   impact.casesForVentilatorsByRequestedTime = getVentilatorcases(lowInfections);
   impact.dollarsInFlight = getDollarsFlight(lowInfections, avgIncome, avgPop, timeToElapse);
 
-  // severImpact:{} the severe case estimation
+  // severImpact:{}
   // Challenge 1
   severeImpact.currentlyInfected = reportedCases * 50;
   const { currentlyInfected: highCurrent } = severeImpact;
@@ -102,5 +102,5 @@ const covid19ImpactEstimator = (data) => {
   return { data, impact, severeImpact };
 };
 
-
+module.exports = covid19ImpactEstimator;
 export default covid19ImpactEstimator;
