@@ -10,7 +10,7 @@ const dayConverter = (periodType, timeToElapse) => {
   }
 };
 
-// Estimate the number of severe positive cases the will req hospitalization
+// Estimate the number of severe positive cases that will req hospitalization
 const getSevereCases = (infectionsByRequestedTime) => {
   const percent = 15 / 100;
   const severeCasesByRequestedTime = percent * infectionsByRequestedTime;
@@ -94,7 +94,7 @@ const covid19ImpactEstimator = (data) => {
   const { severeCasesByRequestedTime: highCases } = severeImpact;
   severeImpact.hospitalBedsByRequestedTime = getHpBeds(totalHospitalBeds, highCases);
 
-  // Challenge Three
+  // Challenge 3
   severeImpact.casesForICUByRequestedTime = getICUcases(highInfections);
   severeImpact.casesForVentilatorsByRequestedTime = getVentilatorcases(highInfections);
   severeImpact.dollarsInFlight = getDollarsFlight(highInfections, avgIncome, avgPop, timeToElapse);
@@ -102,5 +102,5 @@ const covid19ImpactEstimator = (data) => {
   return { data, impact, severeImpact };
 };
 
-module.exports = covid19ImpactEstimator;
+
 export default covid19ImpactEstimator;
