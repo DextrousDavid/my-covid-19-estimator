@@ -94,7 +94,7 @@ const covid19ImpactEstimator = (data) => {
   const { severeCasesByRequestedTime: highCases } = severeImpact;
   severeImpact.hospitalBedsByRequestedTime = getHpBeds(totalHospitalBeds, highCases);
 
-  // Challenge 3
+  // Challenge Three
   severeImpact.casesForICUByRequestedTime = getICUcases(highInfections);
   severeImpact.casesForVentilatorsByRequestedTime = getVentilatorcases(highInfections);
   severeImpact.dollarsInFlight = getDollarsFlight(highInfections, avgIncome, avgPop, timeToElapse);
