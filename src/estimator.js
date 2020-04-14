@@ -1,6 +1,5 @@
-/* eslint-disable no-dupe-keys */
 /* const data = {
-  region: {
+    region: {
     name: 'Africa',
     avgAge: 19.7,
     avgDailyIncomeInUSD: 5,
@@ -12,6 +11,7 @@
   population: 66622705,
   totalHospitalBeds: 1380614
 }; */
+
 const covid19ImpactEstimator = (data) => {
   const output = {
     data: { ...data },
@@ -51,11 +51,7 @@ const covid19ImpactEstimator = (data) => {
           * 50
           * 2 ** Math.floor(data.timeToElapse / 3)
       ),
-      severeCasesByRequestedTime: Math.floor(
-        (0.15 / data.reportedCases)
-          * 50
-          * 2 ** Math.floor(data.timeToElapse / 3)
-      ),
+
       hospitalBedsByRequestedTime:
         data.totalHospitalBeds
         - Math.floor(
