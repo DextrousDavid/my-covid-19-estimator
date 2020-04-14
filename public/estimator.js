@@ -11,6 +11,7 @@
   population: 66622705,
   totalHospitalBeds: 1380614
 }; */
+
 const covid19ImpactEstimator = (data) => {
   const output = {
     data: { ...data },
