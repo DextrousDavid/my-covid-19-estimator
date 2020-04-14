@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BOOTSTRAP PROJECT</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+
+    <body class="bg-light">
+        <div class="container-fluid">
+            <div><h5 id="date" class="float-right"></h5>
+            <h1 class="page-header">NIGERIAN UNIVERSITIES.ORG</h1>
+            <small>A forum for all Nigerian Students...</small></div>
+            <div><button class="btn btn-info btn-sm" onclick="document.getElementById('date').innerHTML = Date();">Show Date and Time</button></div>
+            <hr>
+        </div>
+        <div class="container">
+            <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum quasi nesciunt sit ut com
+            m.odi quae illo error nihil totam asperiores, <em>fugit accusantium mollitia vero</em> in libero neque, soluta beat
+            ae ipsam.</p>
+            <p class="text-capitalize">Lorem ipsum ng elit. Aperiam molestiae nam,
+            iusto impedit debitis autem delectus, <mark>This is me Hiding <del>Yoruba</del> English in between a letter</mark> aspernatur aliquid veniam explicab
+            o doloremque sed accusamus porro totam, <cite>John Telemundo</cite> odio est! Numquam, quidem inventore.dolor sit amet consectetur a
+            dipisici</p>
+            <button type="button" class="btn btn-success">submit</button>
+            <br>
+            <hr>
+            <p class="bg bg-success">This is a success background</p> 
+            <p class="bg-warning">This is a warning background</p>
+            <p class="bg-primary">This has a primary background</p>
+            <p class="bg-muted">This text has a muted backgroud</p>
+            <p class="bg-danger">This text has a red background a.k.a danger background</p>
+            <p class="bg-info">This is an info background</p>
+
+            <!--BUTTONS-->
+            <button class="btn btn-success" href="#">Success</button>
+            <a href="#" class="btn btn-danger btn-lg" role="button">Link</a>
+            <input class="btn btn-warning" type="submit" value="Submit">
+            <br>
+            <hr>
+
+            <!--FORMS-->
+            <form>
+                <p class="text-center"><strong>REGISTER HERE</strong></p>
+                <div class="form-group">
+                    <label>NAME</label>
+                    <input class="form-control" type="text" placeholder="Enter your name...">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" placeholder="Enter your email address...">
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" placeholder="Give us a feedback"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-control">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>UPLOAD FILE</label>
+                    <input type="file">
+                    <p class="help-block"><strong>Only Photos less than 500kb are allowed</strong></p>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <a  class="form-control btn btn-success" href="#" type="submit" value="Submit">Submit</a>
+                </div>
+
+            </form>
+            <br>
+            <hr>
+            
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" type="name" placeholder="name">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" placeholder="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" placeholder="password">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                    <button class="btn btn-success" type="submit">Login</button>
+                 </div>
+            </form>
+            <br>
+
+            <!--TABLES-->
+            <p class="text-center"><strong>STUDENT DATA</strong></p>
+                <table class="table table-striped table-bordered table-condensed table-hover">
+                    <tr>
+                        <th>LastName</th>
+                        <th>FirstName</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr class="bg-success">
+                        <td>Aimakhede</td>
+                        <td>Oseojie</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>Odion</td>
+                        <td>Nosakarite</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Johnson</td>
+                        <td>Rachel</td>
+                        <td>22</td>
+                    </tr>
+                    <tr class="bg-danger">
+                        <td>Chukwuemeka</td>
+                        <td>Sandra</td>
+                        <td>18</td>
+                    </tr>
+                </table>
+                
+                <p class="text-center"><strong>LINK LIST</strong></p>
+                <a class="list-group-item active hover" href="#">Bread</a>
+                <a class="list-group-item disabled hover" href="#">Rice</a>
+                <a class="list-group-item list-group-item-success" href="#">Beans</a>
+                <a class="list-group-item list-group-item-hover" href="#" target="_blank">Garri</a>
+                
+                <p class="text-center"><strong>ALERTS</strong></p>
+                <div class="alert alert-success">Success</div>
+                <div class="alert alert-danger">Danger</div>
+                <div class="alert alert-info">Info</div>
+                <div class="alert alert-warning">Warning</div>
+                <div class="alert alert-default">Default</div>
+
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button class="close" type="button" data-dismiss="alert"><span>&times;</span></button>
+                    You can close this alert
+                </div>
+                <hr>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%;">Downloading File 100%</div>
+                </div>
+        </div>
+      
+
+        <div style="height:500px"></div>
+    <script src="jquery/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
