@@ -9,19 +9,24 @@
     />
     <title>BuildForSDG Cohort-1 Assessment</title>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./bootstrap.min.css">
   </head>
-  <body>
-    <nav class="nav">
-      <h1>Covid-19-Estimator</h1>
-    </nav>
-    <div class="wrapper">
-      <div class="form-wrapper">
-        <div class="form-mini-wrapper">
-          <h1>Complete the required Information</h1>
 
-            <div class="form-div">
-              <form action="">
-              <input
+  <body>
+  <nav class="navbar navbar-expand-sm  bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">
+    COVID-19-ESTIMATOR
+    </a>
+    </div>
+</nav>
+    <div class="container div_centre">
+      <form class="container">
+        <div class="form-group form-mini-wrapper"></div>
+          <h4>Complete the required Information</h4>
+
+            <div class="form-group"> 
+              <label for="population"> POPULATION </label>
+               <input
                 type="number"
                 data-population="population"
                 name="name"
@@ -29,9 +34,10 @@
                 id="name"
                 placeholder="Enter the Population"
               />
-              </form>
             </div>
-            <div class="form-div">
+                 
+            <div class="form-group">
+              <label for=timeToElapse> TIME TO ELAPSE </label>
               <input
                 type="number"
                 data-time-to-elapse="timeToElapse"
@@ -41,7 +47,9 @@
                 placeholder="Enter the period of time"
               />
             </div>
-            <div class="form-div">
+
+            <div class="form-group">
+              <label for="reportedCases">REPORTED CASES</label>
               <input
                 type="number"
                 data-reported-cases="reportedCases"
@@ -51,7 +59,9 @@
                 placeholder="Enter the reported Number of Cases"
               />
             </div>
-            <div class="form-div">
+
+            <div class="form-group">
+              <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS</label>
               <input
                 type="number"
                 data-total-hospital-beds="totalHospitalBeds"
@@ -61,7 +71,8 @@
                 placeholder="Enter the total number of Hospital Beds"
               />
             </div>
-            <div class="form-div">
+            <div class="form-group">
+              <label for="periodType">PERIOD TYPE</label>
               <select
                 name="periodType"
                 id="periodType"
@@ -74,20 +85,21 @@
                 <option value="months">Months</option>
               </select>
             </div>
-
-            <div class="form-div">
+            
+            <div class="form-group">
               <button
                 type="submit"
-                class="submit-btn"
+                class="btn btn-primary submit-btn"
                 data-go-estimate="estimator"
               >
                 Estimate
               </button>
             </div>
           </form>
+          </div>
         </div>
-        <div class="branding">
-          <h1>Result of the Estimation </h1>
+        <div class="container div_center">
+          <h4>Result of the Estimation </h4>
         <div class="single-extimation">
           <h3 id="best-case-opener"><span><i class="fas fa-plus"></i></span>Best Case Estimation </h3>
           <ul id='best-case'>
