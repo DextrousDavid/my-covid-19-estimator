@@ -1,5 +1,5 @@
 :root {
-  --colorPrimary: hsla(56, 92%, 42%, 0.705);
+  --colorPrimary: hsla(175, 89%, 40%, 0.76);
   --colorSecondary: #ffffff;
 }
 
@@ -40,7 +40,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#e7dede, #ffffffb6);
+  background: linear-gradient(#ffffff, #ffffff);
 }
 .form-wrapper {
   display: flex;
