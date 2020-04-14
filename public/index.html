@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="COVID-19, corona virus, virus, corona, estimator, estimate, diseases, COVID-19 estimator, health, BuildForSDG, corona virus cases, health care"
+    />
+    <title>BuildForSDG Cohort-1 Assessment</title>
+    <link rel="stylesheet" href="./style.css"/>
+  </head>
+  <body>
+    <nav class="nav">
+      <h1>Covid-19-Estimator</h1>
+    </nav>
+    <div class="wrapper">
+      <div class="form-wrapper">
+        <div class="form-mini-wrapper">
+          <h1>Complete the required Information</h1>
+          <form action="">
+            <div class="form-div">
+              <input
+                type="number"
+                data-population="population"s
+                name="name"
+                class="form-filed"
+                id="name"
+                placeholder="Enter the Population"
+              />
+            </div>
+            <div class="form-div">
+              <input
+                type="number"
+                data-time-to-elapse="timeToElapse"
+                name="name"
+                class="form-filed"
+                id="name"
+                placeholder="Enter the period of time"
+              />
+            </div>
+            <div class="form-div">
+              <input
+                type="number"
+                data-reported-cases="reportedCases"
+                name="name"
+                class="form-filed"
+                id="name"
+                placeholder="Enter the reported Number of Cases"
+              />
+            </div>
+            <div class="form-div">
+              <input
+                type="number"
+                data-total-hospital-beds="totalHospitalBeds"
+                name="name"
+                class="form-filed"
+                id="totalHospitalBeds"
+                placeholder="Enter the total number of Hospital Beds"
+              />
+            </div>
+            <div class="form-div">
+              <select
+                name="periodType"
+                id="periodType"
+                class="form-filed"
+                data-period-type="periodType"
+              >
+              <option value="">Select</option>
+                <option value="days">Days</option>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+              </select>
+            </div>
+
+            <div class="form-div">
+              <button
+                type="submit"
+                class="submit-btn"
+                data-goestimate="estimator"
+              >
+                Estimate
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="branding">
+          <h1>Result of the Estimation </h1>
+        <div class="single-extimation">
+          <h3 id="best-case-opener"><span><i class="fas fa-plus"></i></span>Best Case Estimation </h3>
+          <ul id='best-case'>
+            <li> Number Currently Infected Persons: <span class="result"> 34440</span></li>
+            <li>  Number of Infections by the requested time:<span class="result"> 34440</span></li>
+            <li> Number of severe cases by the requested time:<span class="result"> 34440</span></li>
+            <li>  Number of available hospital's beds by the requested time:<span class="result"> 34440</span></li>
+            <li>Number of cases for ICU by the requested time:<span class="result"> 34440</span></li>
+            <li> Number of cases for Ventilators by the requested time: <span class="result"> 34440</span></li>
+          </ul>
+          </div>
+        <br>
+        <div>
+        <h3 class="worst-result" id="worst-case-opener"> <span><i class="fas fa-plus"></i></span>Worst Case Estimation</h3>
+            <ul id="worst-case">
+                 <li> Number Currently Infected Persons: <span class="worst-result"> 54440</span></li>
+                <li>  Number of Infections by the requested time:<span class="worst-result"> 54440</span></li>
+                <li> Number of severe cases by the requested time:<span class="worst-result"> 54440</span></li>
+                <li>  Number of available hospital's beds by the requested time:<span class="worst-result"> 54440</span></li>
+                <li>Number of cases for ICU by the requested time:<span class="worst-result"> 54440</span></li>
+                <li> Number of cases for Ventilators by the requested time: <span class="worst-result"> 54440</span></li>
+             
+            </ul>
+      </div>
+     
+    </div>
+    <script src="./estimator.js"></script>
+    <script src="./app.js"></script>
+    <script src="./all.min.js"></script>
+  </body>
+</html>

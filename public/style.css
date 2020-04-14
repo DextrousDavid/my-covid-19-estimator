@@ -1,0 +1,215 @@
+:root {
+  --colorPrimary: hsla(56, 92%, 42%, 0.705);
+  --colorSecondary: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav {
+  height: 10vh;
+  padding: 5px 10px;
+  background: var(--colorPrimary);
+}
+
+.nav h1 {
+  text-transform: uppercase;
+  color: var(--colorSecondary);
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#e7dede, #ffffffb6);
+}
+.form-wrapper {
+  display: flex;
+  width: 80vw;
+  max-width: 1020px;
+  padding: 20px;
+}
+
+.form-mini-wrapper h1 {
+  font-size: 1.6rem;
+  color: var(--colorPrimary);
+  margin-bottom: 10px;
+}
+.branding {
+  width: 50%;
+  height: 100%;
+  padding: 5px;
+  background: var(--colorSecondary);
+}
+
+.branding ul {
+  list-style-type: none;
+}
+
+.branding ul li {
+  padding: 5px 0;
+  margin-bottom: 4px;
+  list-style-type: none;
+}
+.branding h1 {
+  font-size: 1.6rem;
+  color: var(--colorPrimary);
+}
+.branding h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--colorPrimary);
+  cursor: pointer;
+}
+
+.fa-plus {
+  margin-right: 7px;
+  font-size: small;
+}
+.branding .worst-result {
+  color: #d10404;
+}
+.result {
+  font-weight: 500;
+  color: var(--colorPrimary);
+}
+.worst-result {
+  font-weight: 500;
+  color: #d10404;
+}
+.showBestCase {
+  height: 0px;
+  overflow: hidden;
+  transition: 2s linear;
+}
+.showWorstCase {
+  height: 0px;
+  overflow: hidden;
+  transition: 2s linear;
+}
+.branding p {
+  line-height: 1.5em;
+  margin-bottom: 4px;
+}
+.mybutton {
+  text-align: center;
+  margin-top: 5px;
+  padding: 9px 5px;
+  border: none;
+  cursor: pointer;
+  background: var(--colorPrimary);
+  color: var(--colorSecondary);
+}
+.form-mini-wrapper {
+  width: 50%;
+  height: 100%;
+  padding: 3px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 20px;
+}
+
+.form-filed {
+  width: 100%;
+  height: 2.5rem;
+  box-shadow: 2px 2px 3px #b0b7be;
+  border: 1px solid var(--colorSecondary);
+  border-radius: 30px;
+  padding-left: 10px;
+  outline: none;
+
+  margin-bottom: 8px;
+}
+.form-filed::placeholder {
+  margin-left: 50px;
+  color: #000000;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 2.3rem;
+  margin-bottom: 2px;
+  margin-top: 5px;
+  padding: 8px 5px;
+  border: none;
+  cursor: pointer;
+  background: var(--colorPrimary);
+  font-weight: 500;
+  color: var(--colorSecondary);
+  transition: 0.5s linear;
+}
+
+.submit-btn:hover {
+  height: 2.4rem;
+  background: var(--colorSecondary);
+  color: var(--colorPrimary);
+  box-shadow: 2px 2px 3px #617080;
+}
+
+@media screen and (max-width: 760px) {
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .branding {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 10px;
+  }
+  .form-mini-wrapper {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-wrapper h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .mybutton {
+    text-align: center;
+    margin-top: 5px;
+    padding: 9px 5px;
+    border: none;
+    cursor: pointer;
+  }
+}
